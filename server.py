@@ -8,6 +8,8 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("email-drafter")
 
 # Settings come from the .env file next to this script (not from system variables).
+# .env reading pattern from python-dotenv's own documentation:
+# https://pypi.org/project/python-dotenv/
 BASE_DIR = Path(__file__).parent
 config = dotenv_values(BASE_DIR / ".env")
 DRAFTS_DIR = BASE_DIR / config.get("DRAFTS_DIR", "drafts")
